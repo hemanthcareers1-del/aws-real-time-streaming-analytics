@@ -1,0 +1,14 @@
+{
+  "Comment": "Orchestration for AWS streaming analytics pipeline",
+  "StartAt": "StartGlueStreamingJob",
+  "States": {
+    "StartGlueStreamingJob": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun",
+      "Parameters": {
+        "JobName": "real-time-streaming-job"
+      },
+      "End": true
+    }
+  }
+}
